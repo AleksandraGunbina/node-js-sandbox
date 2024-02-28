@@ -17,8 +17,12 @@ getCaseNumber.question('Choise case number: 1 - classic, 2 - async-await: ', (ca
       console.log((simplePromise = require("./classic-promis")));
       break;
     case 2:
-      console.log((asyncCase = require("./async-awit")));
+      console.log((asyncCase = require("./async-await")));
       break;
+      default: {
+        console.log('don\'t find this case')
+        break
+      }
   }
   //getCaseNumber.close();
 });
