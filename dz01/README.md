@@ -6,7 +6,7 @@ The instructions for running the program are given below
 ## Prepare
 1. If you don't have the Node.js installed, do it.
 2. Copy programm
--If you use a git:
+- If you use a git:
 -   clone repository by using "git clone" command in terminal.
 -   link to repository: https://github.com/AleksandraGunbina/node-js-sandbox
 - Else:
@@ -31,9 +31,23 @@ node index.js 1 2 3
 ```bash
 npm start -- 1 -2 -3
 ```
+- If you do not enter the coefficients b or c, they will be automatically equated to zero
+- Example3:
+```bash
+$ node index.js 1 -2
+```
+- Result (Example 3):
+```
+Исходное уравнение:
+ 1x^2-2x
+Уравнение имеет два решения: 0 и 2
+```
+
 - a - first coefficient of equation (the quadratic coefficient). It cannot be equal to zero. if a = 0 - the equation is of linear type
 - b - second coefficient of equation (the linear coefficient)
 - c - third coefficient of equation (constant coefficient or free term)
+
+
 
 ## Operating modes
 1. If the discriminant > 0, then the equation has two different solutions

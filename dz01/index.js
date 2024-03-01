@@ -7,8 +7,8 @@ const coefficients = argv.slice(2).map(Number);
 
 //the coefficients of the equation
 const a = coefficients[0];
-const b = coefficients[1];
-const c = coefficients[2];
+const b = coefficients[1] == undefined ? 0 : coefficients[1];
+const c = coefficients[2] == undefined ? 0 : coefficients[2];
 
 //this function will use for displaying of the equation
 const onEquationCoeffView = (coeff) => {
@@ -27,7 +27,8 @@ if (coefficients.length < 1) {
 } else if (coefficients.length > 3) {
   stdout.write("Введено слишком много коэффициентов");
   process.exit(40);
-} else if (a === 0) {
+} 
+else if (a === 0) {
   stderr.write(
     "Это не квадратное уравнение, старший коэффициент не может быть равен нулю"
   );
