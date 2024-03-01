@@ -7,20 +7,20 @@ The instructions for running the program are given below
 1. If you don't have the Node.js installed, do it.
 2. Copy programm
 -If you use a git:
-- clone repository by using "git clone" command in terminal.
-- link: https://github.com/AleksandraGunbina/node-js-sandbox/tree/main/dz01
+-   clone repository by using "git clone" command in terminal.
+-   link to repository: https://github.com/AleksandraGunbina/node-js-sandbox
 - Else:
-- copy files to your catalog
+-   copy files to your catalog
 
 ## Start programm
 Go to terminal:
-- go to the project directory
-- start programm with following command: node index.js <a> <b> <c>
+- go to the project directory: .../node-js-sandbox/dz01
+- start programm with following command: node index.js a b c
 - Example:
 ```
 node index.js 1 2 3
 ```
-- a - first coefficient of equation (the quadratic coefficient). It cannot be equal to zero. if <a> is equal to zero - the equation is of linear type
+- a - first coefficient of equation (the quadratic coefficient). It cannot be equal to zero. if a = 0 - the equation is of linear type
 - b - second coefficient of equation (the linear coefficient)
 - c - third coefficient of equation (constant coefficient or free term)
 

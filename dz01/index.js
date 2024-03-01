@@ -20,7 +20,6 @@ const onEquationCoeffView = (coeff) => {
     return coeff;
   }
 };
-console.log(onEquationCoeffView(b))
 
 if (coefficients.length < 1) {
   stdout.write("Коэффициенты не введены");
