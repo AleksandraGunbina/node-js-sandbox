@@ -15,10 +15,21 @@ The instructions for running the program are given below
 ## Start programm
 Go to terminal:
 - go to the project directory: .../node-js-sandbox/dz01
-- start programm with following command: node index.js a b c
-- Example:
+- start programm with following commands:
+```bash
+node index.js <a> <b> <c>
+```
+or
+```bash
+npm start -- <a> <b> <c>
+```
+- Example1:
 ```
 node index.js 1 2 3
+```
+- Example2:
+```bash
+npm start -- 1 -2 -3
 ```
 - a - first coefficient of equation (the quadratic coefficient). It cannot be equal to zero. if a = 0 - the equation is of linear type
 - b - second coefficient of equation (the linear coefficient)
