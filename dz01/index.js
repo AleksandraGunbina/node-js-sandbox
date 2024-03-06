@@ -57,11 +57,6 @@ else if (a === 0) {
       stdout.write(`Уравение иммет одно (два одинаковых) решение: ${solution}\n`);
       process.exit(0);
     }
-    case discriminant === 0: {
-      const solution = (-b / (2 * a)).toFixed(3);
-      stdout.write(`Уравение иммет одно (два одинаковых) решение: ${solution}\n`);
-      process.exit(0);
-    }
     case discriminant < 0: {
       stderr.write("Уравнение не имеет решений\n");
       process.exit(50);
