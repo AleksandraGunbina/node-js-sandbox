@@ -1,4 +1,4 @@
-# The quadratic equations solver
+# Displaying the values of environment variables
 This program should displaying the values of environment variables for different modes (development or production).
 
 ## Prepare
