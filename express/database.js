@@ -44,6 +44,13 @@ export default class DatabaseSimulation {
     return person;
   }
 
+  getContactById(id) {
+    const person = this.database.find((item) => {
+      return item.id === id;
+    });
+    return person;
+  }
+
   updateContactList(id, data) {
     const found = this.database.find((item) => {
       return item.id === id;
@@ -66,8 +73,23 @@ export default class DatabaseSimulation {
       });
       this.storeToDisk();
       return true;
-    } catch (e) {
-      console.error("DATABASE ERROR", e);
+    } catch (error) {
+      console.error("DATABASE ERROR", error);
+      return false;
+    }
+  }
+
+  updateContactInfo(id, data) {
+    const findContact= this.database.find((item) => {
+      return item.id === id;
+    });
+    const foundElIdx = this.database.indexOf(findContact);
+    try {
+      this.database[foundElIdx] = data;
+      this.storeToDisk();
+      return true;
+    } catch (error) {
+      console.error("DATABASE ERROR", error);
       return false;
     }
   }

@@ -39,14 +39,74 @@ app.get('/api/contacts/:surname', (req, resp) => {
       return;
   }
 
-  const oneItem = contactBase.getContactBySurname(surname);
+  const personInfo= contactBase.getContactBySurname(surname);
 
-  if(!oneItem){
+  if(!personInfo){
       resp.status(404);
       resp.send({error: `Item with surname=${surname} not found`});
       return;
   }
-  resp.send(oneItem);
+  resp.send(personInfo);
+});
+
+app.delete('/api/contacts/:id', (req, resp) => {
+  const id = Number(req.params.id);
+  if(!id){
+      resp.status(500);
+      resp.send({error: 'Error 500'});
+      return;
+  }
+
+  const personInfo = contactBase.getContactById(id);
+
+  if(!personInfo){
+      resp.status(404);
+      resp.send({error: `Item with id=${id} not found`});
+      return;
+  }
+
+  if(contactBase.deletePersonInfo(id)) {
+      resp.status(204);
+      resp.end();
+  } else {
+      resp.status(500);
+      resp.send({error: `Error 500 when deleting item with id ${id}`});
+  }
+});
+
+app.patch('/api/contacts/:id', (req, resp) => {
+
+  const id = Number(req.params.id);
+
+  if(!id){
+      resp.status(500);
+      resp.send({error: 'Error 500'});
+      return;
+  }
+
+  const personInfo = contactBase.getContactById(id);
+
+  if(!personInfo){
+      resp.status(404);
+      resp.send({error: `Item with id=${id} not found`});
+      return;
+  }
+
+  let data = {
+    id: personInfo.id,
+    name: req.body.name? req.body.name : personInfo.name,
+    surname: req.body.surname ? req.body.surname : personInfo.surname,
+    phone: req.body.phone ? req.body.phone : personInfo.phone,
+  }
+
+  if(!contactBase.updateContactInfo(id, data)) {
+      resp.status(500);
+      resp.send({error: `Error 500 when updating item with id ${id}`});
+      return;
+  }
+
+ resp.status(200);
+  resp.send(data);
 });
 
 
